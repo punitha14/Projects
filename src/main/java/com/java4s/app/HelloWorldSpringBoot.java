@@ -3,7 +3,8 @@ package com.java4s.app;
 	 
 	import org.springframework.boot.SpringApplication;
 	import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
-	import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RestController;
 	 
 	/**
@@ -20,12 +21,12 @@ package com.java4s.app;
 	public class HelloWorldSpringBoot {
 	 
 		// @RequestMapping annotation is used for mapping web requests onto specific handler classes
-		@RequestMapping("/")
+		@GetMapping("/")
 		String basicURL() {
 			return "Welcome to Spring Boot Hello World Tutorial";
 		}
 	 
-		@RequestMapping("crunchify")
+		@GetMapping("crunchify")
 		String crunchifyURL() {
 			return "Hello Crunchify Friends! This is your first SpringBoot Example. Isn't that so Simple?";
 		}
