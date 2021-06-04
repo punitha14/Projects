@@ -6,6 +6,8 @@ package com.java4s.app;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 	import org.springframework.web.bind.annotation.RestController;
+
+import springfox.documentation.swagger2.annotations.EnableSwagger2;
 	 
 	/**
 	 * @author Crunchify.com - Simple Spring Boot Example
@@ -18,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 	// @EnableAutoConfiguration enables auto-configuration of the Spring Application Context, attempting to guess
 	// and configure beans that you are likely to need.
 	@EnableAutoConfiguration
+	@EnableSwagger2
 	public class HelloWorldSpringBoot {
 	 
 		// @RequestMapping annotation is used for mapping web requests onto specific handler classes
