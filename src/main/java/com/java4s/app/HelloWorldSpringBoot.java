@@ -21,12 +21,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 	public class HelloWorldSpringBoot {
 	 
 		// @RequestMapping annotation is used for mapping web requests onto specific handler classes
-		@GetMapping("/")
+		@RequestMapping("/")
 		String basicURL() {
 			return "Welcome to Spring Boot Hello World Tutorial";
 		}
 	 
-		@GetMapping("crunchify")
+		@RequestMapping("crunchify")
 		String crunchifyURL() {
 			return "Hello Crunchify Friends! This is your first SpringBoot Example. Isn't that so Simple?";
 		}
