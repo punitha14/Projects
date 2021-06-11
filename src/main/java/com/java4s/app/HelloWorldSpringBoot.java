@@ -3,9 +3,15 @@ package com.java4s.app;
 	 
 	import org.springframework.boot.SpringApplication;
 	import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-	import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 	 
@@ -32,6 +38,12 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		@RequestMapping("crunchify")
 		String crunchifyURL() {
 			return "Hello Crunchify Friends! This is your first SpringBoot Example. Isn't that so Simple?";
+		}
+		
+		@PostMapping("testapi")
+		public ResponseEntity<String> addName(@RequestBody String name) { 
+		   // return "Hello : " + name;
+		    return new ResponseEntity<String>("Hello : " + name,HttpStatus.CREATED);
 		}
 	 
 		public static void main(String[] args) throws Exception {
