@@ -41,9 +41,9 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		}
 		
 		@PostMapping("testapi")
-		public ResponseEntity<String> addName(@RequestBody String name) { 
+		public String addName(@RequestBody String name) { 
 		   // return "Hello : " + name;
-		    return new ResponseEntity<String>("Hello : " + name,HttpStatus.CREATED);
+		    return "Hello : " + name;
 		}
 	 
 		public static void main(String[] args) throws Exception {
