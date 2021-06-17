@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.java4s.pojo.AccountDetails;
+
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 	 
 	/**
@@ -20,15 +22,17 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 	 *
 	 */
 	 
+
 	// @RestController is a convenience annotation that is itself annotated with @Controller and @ResponseBody
 	@RestController
 	 
 	// @EnableAutoConfiguration enables auto-configuration of the Spring Application Context, attempting to guess
 	// and configure beans that you are likely to need.
+
 	@EnableAutoConfiguration
 	@EnableSwagger2
 	public class HelloWorldSpringBoot {
-	 
+		   double depAmt;
 		// @RequestMapping annotation is used for mapping web requests onto specific handler classes
 		@RequestMapping("/")
 		String basicURL() {
@@ -45,8 +49,29 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		   // return "Hello : " + name;
 		    return "Hello : " + name;
 		}
-	 
-		public static void main(String[] args) throws Exception {
+		
+		@PostMapping("accountconfig")
+		public AccountDetails createProduct(@RequestBody AccountDetails accountDetails) {
+		    // custom logic
+			depAmt = accountDetails.getDepositAmount();
+		    return accountDetails;
+		}
+		
+		@GetMapping("balanceinquiry")
+		public double balanceInquiry(@RequestParam(value = "accountName") String accountName) { 
+		 return depAmt;
+		}
+		
+				      
+		@PostMapping("accountstatus")
+		public String accountStatus(@RequestBody String name) { 
+		   // return "Hello : " + name;
+		    return "Hello : " + name;
+		}
+		
+		
+		
+	   public static void main(String[] args) throws Exception {
 	 
 			// SpringApplication classes that can be used to bootstrap and launch a Spring application from a Java
 			// main method. By default class will perform the following steps to bootstrap your application.
