@@ -57,7 +57,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		    return accountDetails;
 		}
 		
-		@GetMapping("balanceinquiry")
+		@PostMapping("balanceinquiry")
 		public double balanceInquiry(@RequestParam(value = "accountName") String accountName) { 
 		 return depAmt;
 		}
