@@ -33,6 +33,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 	@EnableSwagger2
 	public class HelloWorldSpringBoot {
 		   double depAmt;
+		   String accountStatus="";
 		// @RequestMapping annotation is used for mapping web requests onto specific handler classes
 		@RequestMapping("/")
 		String basicURL() {
@@ -54,21 +55,22 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		public AccountDetails createProduct(@RequestBody AccountDetails accountDetails) {
 		    // custom logic
 			depAmt = accountDetails.getDepositAmount();
+			accountStatus = accountDetails.getAccountStatus();
 			 System.out.println("Account No: " + accountDetails.getAccountNo() + " Account Name: " + accountDetails.getAccountName() +
 				        " address: " + accountDetails.getAddress() + " depositAmount: " + accountDetails.getDepositAmount());
 		    return accountDetails;
 		}
 		
 		@PostMapping("balanceinquiry")
-		public double balanceInquiry(@RequestParam(value = "accountName") String accountName) { 
+		public double balanceInquiry(@RequestParam(value = "accountNo") String accountNo) { 
 		 return depAmt;
 		}
 		
 				      
 		@PostMapping("accountstatus")
-		public String accountStatus(@RequestBody String name) { 
+		public String accountStatus(@RequestParam(value = "accountNo") String accountNo) { 
 		   // return "Hello : " + name;
-		    return "Hello : " + name;
+		    return accountStatus;
 		}
 		
 		
