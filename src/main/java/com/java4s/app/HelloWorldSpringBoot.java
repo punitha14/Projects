@@ -54,6 +54,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		public AccountDetails createProduct(@RequestBody AccountDetails accountDetails) {
 		    // custom logic
 			depAmt = accountDetails.getDepositAmount();
+			 System.out.println("Account No: " + accountDetails.getAccountNo() + " Account Name: " + accountDetails.getAccountName() +
+				        " address: " + accountDetails.getAddress() + " depositAmount: " + accountDetails.getDepositAmount());
 		    return accountDetails;
 		}
 		

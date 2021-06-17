@@ -44,5 +44,13 @@ public class AccountDetails implements Serializable {
 		}
 
 	   
+		@Override
+		public String toString() {
+		    String output = "Account No: " + accountNo + " Account Name: " + accountName +
+		        " address: " + address + " depositAmount: " + depositAmount ;
 
+		    System.out.println("Output :" +output);
+		    
+		    return output;
+		}
 }
