@@ -62,13 +62,13 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 		}
 		
 		@PostMapping("balanceinquiry")
-		public double balanceInquiry(@RequestParam(value = "accountNo") String accountNo) { 
+		public double balanceInquiry(@RequestParam(value = "accountName") String accountName) { 
 		 return depAmt;
 		}
 		
 				      
 		@PostMapping("accountstatus")
-		public String accountStatus(@RequestParam(value = "accountNo") String accountNo) { 
+		public String accountStatus(@RequestParam(value = "accountName") String accountName) { 
 		   // return "Hello : " + name;
 		    return accountStatus;
 		}
